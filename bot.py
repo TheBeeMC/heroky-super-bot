@@ -1,63 +1,73 @@
-import discord  # sniper.py
+# sniper.py
+import discord
 from discord.ext import commands
 import random
 import asyncio
 import os
 import subprocess
 import logging
-command_prefix = '+'
-bot = commands.Bot(command_prefix)
-description = 'Sniper made by Lizard'
 
+bot = commands.Bot(command_prefix='/')
+
+ 
 @bot.event
 async def on_message(message):
-    if message.content.startswith('+queue'):
-        embed = discord.Embed(title="SERVICE STATUS", description="", colour=1742064)
-        embed.set_author(name='Authentication service is currently being fixed', icon_url='')
-        embed.add_field(name='We will be back soon!', value='Sniper session service is not healthy and will be fix asap!')
-        embed.set_footer(text='Sniper made by Lizard')
-        await message.channel.send(embed=embed)
-    if message.content.startswith('+checktokens'):
-        embed = discord.Embed(title='you have have 0 tokens', description='If you want more pm lizard', color=1742064)
-        embed.set_author(name='Service is currently down and will be back as soon as possible', icon_url='')
-        embed.add_field(name='Tokens can beat other queued snipes', value='the % chance is 0 of sniping a name', inline=True)
-        embed.set_footer(text='sniper coded by Lizard')
-        await message.channel.send(embed=embed)
-    if message.content.startswith('+snipecheck'):
-        await message.channel.send("The names that are taken are")
-        await message.channel.send("Heaven")
-        await message.channel.send("Shower")
-        await message.channel.send("Bone")
-        await message.channel.send("Spifey")
-        await message.channel.send("Thot")
-        await message.channel.send("Snore: From Nate")
-        await message.channel.send("Coyote")
-        await message.channel.send("Spop: From CHRIS")
-        await message.channel.send("Warning")
-        await message.channel.send("Base")
-        await message.channel.send("IGN")
-        await message.channel.send("Smoothed")
-        await message.channel.send("All these names are taken and cannot be taken by Tokens")
-        print('Discord bot made by lizard')
-    if message.content.startswith('check'):
-        await message.channel.send('Setting name AdolfFuhrer has been sniped')
+    if message.content.startswith('/status'):
+            embed = discord.Embed(title="Miner Bot Status: 🔵 Online", description="Everything is healthy", colour=0x1a94f0)
+            embed.set_footer(text="Miner Bot™ @ coded by Captain#2713")
+            await bot.send_message(message.channel, embed=embed)
+
+    if message.content.startswith('/help'):
+        embed=discord.Embed(title="***Miner Bot Help***", description="Bot Cost: 5$", color=0x1a94f0)
+        embed.set_author(name='Commands', icon_url="")
+        embed.add_field(name="***Coming soon***", value="/status to check if Miner is online", inline=True)
+        embed.set_footer(text='Miner Bot Status: 🔵 Online')
+        await bot.send_message(message.channel, embed=embed)
+        
+        
+    if message.content.startswith('/miner'):
+        embed=discord.Embed(title="https://discord.gg/kJGFfKA", description="⛏", color=0x1a94f0)
+        embed.set_author(name='Miner Bot Discord: 👷', icon_url="")
+        embed.add_field(name="https://discord.io/Miner", value="Want to buy the bot? Join our discord and pm Captain#2713", inline=True)
+        embed.set_footer(text='Miner Bot Status: 🔵 Online')
+        await bot.send_message(message.channel, embed=embed)  
+        
+    if message.content.startswith('/payment'):
+        embed=discord.Embed(title="***Miner Bot Payment**", description="Miner Bot cost 5$ and there is no refund⛏", color=0x1a94f0)
+        embed.set_author(name='Why choose Miner Bot? Because its fun and can make your server active! It can roast you and block words', icon_url="")
+        embed.add_field(name=":thumbsdown: The following is 100% prohibited:", value="Why? Because it protects it from getting it leaked", inline=True)
+        embed.set_footer(text='Thread posted by Captain#2713')
+        await bot.send_message(message.channel, embed=embed)           
+
+      
+    if message.content.startswith('/rules'):
+        embed=discord.Embed(title=":unamused: Do not @ping or direct message [DM] the Staff with unsolicited messages.", description="They are people too! Please treat them as such!  Besides, repeated distraction will only delay the next update.", color=0x1a94f0)
+        embed.set_author(name='***Server Rules***', icon_url="")
+        embed.add_field(name=":thumbsdown: The following is 100% prohibited:", value="Please respect the rules", inline=True)
+        embed.set_footer(text='Thread posted by Captain#2713')
+        await bot.send_message(message.channel, embed=embed)      
+        
+        
+    if message.content.startswith('/rules'):
+        embed=discord.Embed(title=":unamused: Do not @ping or direct message [DM] the Staff with unsolicited messages.", description="They are people too! Please treat them as such!  Besides, repeated distraction will only delay the next update.", color=0x1a94f0)
+        embed.set_author(name='***Server Rules***', icon_url="")
+        embed.add_field(name=":thumbsdown: The following is 100% prohibited:", value="Please respect the rules", inline=True)
+        embed.set_footer(text='Thread posted by Captain#2713')
+        await bot.send_message(message.channel, embed=embed)         
+
+    if message.content.startswith('/info'):
+        await bot.send_message(message.channel, "https://imgur.com/a/I5QIaEV")
 
 async def status_task():
     while True:
-        await bot.change_presence(activity=discord.Game(name='with og names'))
-        await asyncio.sleep(10)
-        await bot.change_presence(activity=discord.Game(name='+help | coded by lizard'))
-        await asyncio.sleep(10)
-        await bot.change_presence(activity=discord.Game(name='with my sniper'))
-        await asyncio.sleep(10)
-        await bot.change_presence(activity=discord.Game(name='with a fidget spinner'))
-        await asyncio.sleep(10)
+        await bot.change_presence(game=discord.Game(name="Miner"))
 
 @bot.event
 async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
+    print('Miner Bot™ @ coded by Captain#2713')
     print('------')
-
-bot.run('NDc3NDM3ODAyNTE5MzMwODE2.Dk8LNQ.jLHAALrH8H-OUFHlGrVYsL59lBc')
+    print('INFO')
+    print('------')
+    print('Logged in as: ' + bot.user.name + ', ' + bot.user.id)
+        
+bot.run(os.getenv('TOKEN'))
